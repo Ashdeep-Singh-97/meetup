@@ -130,7 +130,10 @@ function SignUp() {
 
 function Landing() {
     const [isSigningUp, setIsSigningUp] = useState(false);
-
+    const navigate = useNavigate();
+    const handleNavigation = () => {
+        navigate('/home');
+    };
     return (
         <div className="flex h-screen">
             <div className="w-1/2 flex flex-col items-center justify-center space-y-6 p-8">
@@ -151,8 +154,11 @@ function Landing() {
                     </div>
 
                     <div className="text-lg font-semibold my-4">OR</div>
-                    <button className="w-1/2 py-2 text-white bg-red-500 rounded hover:bg-red-600">
-                        Sign in with Google
+                    <button
+                    className="w-1/2 py-2 text-white bg-red-500 rounded hover:bg-red-600"
+                    onClick={handleNavigation}
+                    >
+                        Go as guest
                     </button>
                     <div className="mt-10 text-center text-gray-800"> "What you aim at determines what you see"</div>
                     <div className="text-center text-gray-800"> Jordan Peterson</div>
