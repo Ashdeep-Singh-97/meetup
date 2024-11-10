@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 import Navbar from '../components/Navbar';
 import { LatLngTuple } from 'leaflet';
+import L from 'leaflet';  // Import leaflet
 
 const Home = () => {
   const [latitude, setLatitude] = useState<number | null>(null);
@@ -59,17 +60,30 @@ const Home = () => {
 
   const renderMap = () => {
     if (latitude && longitude && destinationLat && destinationLon) {
-      // Type assertion to ensure coordinates are in the expected format (LatLngTuple)
       const userLocation: LatLngTuple = [latitude, longitude];
       const destinationLocation: LatLngTuple = [destinationLat, destinationLon];
+
+      const userIcon = new L.Icon({
+        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+      });
+
+      const destinationIcon = new L.Icon({
+        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+      });
 
       return (
         <MapContainer center={userLocation} zoom={15} style={{ height: '400px', width: '100%' }}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <Marker position={userLocation}>
+          <Marker position={userLocation} icon={userIcon}>
             <Popup>Your Location</Popup>
           </Marker>
-          <Marker position={destinationLocation}>
+          <Marker position={destinationLocation} icon={destinationIcon}>
             <Popup>{place}</Popup>
           </Marker>
           <Polyline positions={[userLocation, destinationLocation]} color="blue" />
