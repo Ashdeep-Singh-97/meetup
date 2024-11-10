@@ -141,6 +141,7 @@ function Landing() {
                 <div className="absolute top-20 w-1/2 flex flex-col items-center">
                     <div className="text-3xl font-bold">Meet Up</div>
                     <div className="text-center text-gray-800">Walk for your health</div> {/* Added subheading */}
+                    <div className="text-center text-gray-800">(name: ibu, password: 123456)</div> {/* Added subheading */}
 
                     <div className="w-full h-[250px] flex items-end justify-center">
                         {isSigningUp ? <SignUp /> : <SignIn />}
