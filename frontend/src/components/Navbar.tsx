@@ -6,7 +6,7 @@ const Navbar = () => {
     const handleLogout = async () => {
         try {
             // Send the logout request
-            const response = await fetch('http://localhost:3000/api/v1/logout', {
+            const response = await fetch('https://meetup-nxf4.vercel.app/api/v1/logout', {
                 method: 'POST',
                 credentials: 'include', // Include credentials to remove the session cookie
             });

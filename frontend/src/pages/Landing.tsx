@@ -9,7 +9,7 @@ function SignIn() {
     const handleSignIn = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/v1/signin', {
+            const response = await fetch('https://meetup-nxf4.vercel.app/api/v1/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ function SignUp() {
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/v1/signup', {
+            const response = await fetch('https://meetup-nxf4.vercel.app/api/v1/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -37,7 +37,7 @@ const Home = () => {
     if (latitude && longitude) {
       setLoading(true);
       axios
-        .post('http://localhost:3000/api/v1/getplaces', {
+        .post('https://meetup-nxf4.vercel.app/api/v1/getplaces', {
           latitude,
           longitude,
         })
