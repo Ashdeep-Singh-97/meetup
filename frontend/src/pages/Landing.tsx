@@ -171,8 +171,7 @@ function Landing() {
                 style={{ backgroundImage: `url('/walk.jpg')` }}
             ></div>
 
-            {/* Bottom Section with absolute positioning */}
-            <div className="absolute bottom-10 w-1/2 flex flex-col items-center justify-center space-y-4">
+            {/* <div className="lg:flex hidden absolute bottom-10 w-1/2 flex-col items-center justify-center space-y-4">
                 <div className="text-center font-bold text-lg">
                     <span className="text-2xl flex items-center justify-center space-x-2">
                         <img src="/footstep.png" className="w-10 h-10" />
@@ -187,7 +186,7 @@ function Landing() {
                     <span className="text-xl">•</span>
                     <span>Win</span>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
