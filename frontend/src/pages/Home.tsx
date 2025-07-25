@@ -128,8 +128,9 @@ const Home = () => {
               <p className="text-gray-600">Latitude: {destinationLat?.toFixed(4)}</p>
               <p className="text-gray-600">Longitude: {destinationLon?.toFixed(4)}</p>
             </div>
-          ) : showDestination && !loading && (
+          ) : (!showDestination && !loading ? (
             <p className="mt-4 text-gray-600">No destination found.</p>
+          ) : (<p className="text-red-500 mt-2">{error}</p>)
           )}
         </div>
 
