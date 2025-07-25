@@ -23,7 +23,7 @@ const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const corsOptions = {
-    origin: 'https://chatbot-cfpo.vercel.app',
+    origin: 'https://meetup-teal-tau.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
@@ -93,7 +93,8 @@ app.post('/api/v1/logout', (req, res) => {
     res.status(200).json({ message: 'Successfully logged out' });
 });
 app.post('/api/v1/getplaces', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { latitude, longitude } = req.body; // Category ID default set to '13032' for ATMs
+    const { latitude, longitude } = req.body;
+    // console.log(latitude, longitude);
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude},${longitude}&key=${OPENCAGE_API}`;
     try {
         const response = yield fetch(url);

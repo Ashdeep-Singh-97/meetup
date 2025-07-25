@@ -103,7 +103,7 @@ const Home = () => {
               Latitude: {latitude.toFixed(4)}, Longitude: {longitude.toFixed(4)}
             </p>
           ) : (
-            <p className="text-red-500 mt-2">{error}</p>
+            <p className="text-red-500 mt-2">Geting your location</p>
           )}
         </div>
 
